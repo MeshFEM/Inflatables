@@ -1,7 +1,7 @@
 Inflatables
 ===========
 
-<img src='http://julianpanetta.com/publication/inflatables/teaser.jpg' width='229px' height='220px' />
+<img src='http://julianpanetta.com/publication/inflatables/teaser.jpg' width='100%'/>
 
 This is the codebase for the Siggraph paper
 [Computational Inverse Design of Surface-based Inflatables](http://julianpanetta.com/publication/inflatables/).
@@ -9,7 +9,8 @@ The code is primarily written in C++, but is meant to be interacted with through
 bindings.
 
 # Getting Started
-##
+
+## C++ Code Dependencies
 The C++ code relies on `Boost` and `CHOLMOD/UMFPACK`, which must be installed
 separately.
 
@@ -31,8 +32,8 @@ sudo port install python39
 sudo port install npm7
 ```
 
-### Ubuntu 19.04
-A few more packages need to be installed on a fresh Ubuntu 19.04 install:
+### Ubuntu 20.04
+A few more packages need to be installed on a fresh Ubuntu 20.04 install:
 ```bash
 # Build/version control tools
 sudo apt install git cmake ninja-build
@@ -40,7 +41,6 @@ sudo apt install git cmake ninja-build
 sudo apt install libboost-filesystem-dev libboost-system-dev libboost-program-options-dev libsuitesparse-dev
 # Dependencies (pybind11, jupyterlab/notebooks)
 sudo apt install python3-pip npm
-# Ubuntu 19.04 packages an older version of npm that is incompatible with its nodejs version...
 sudo npm install npm@latest -g
 ```
 

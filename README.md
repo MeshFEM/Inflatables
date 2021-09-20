@@ -3,9 +3,9 @@ Inflatables
 
 <img src='http://julianpanetta.com/publication/inflatables/teaser.jpg' width='100%'/>
 
-This is the codebase for the Siggraph paper
+This is the codebase for our Siggraph paper,
 [Computational Inverse Design of Surface-based Inflatables](http://julianpanetta.com/publication/inflatables/).
-The code is primarily written in C++, but is meant to be interacted with through the Python
+The code is written primarily in C++, but it is meant to be used through the Python
 bindings.
 
 # Getting Started
@@ -19,7 +19,7 @@ The code also relies on several dependencies that are included as submodules:
 [libigl](https://github.com/libigl/libigl),
 
 Finally, it includes a version of Keenan Crane's [stripe patterns code](https://www.cs.cmu.edu/~kmcrane/Projects/StripePatterns/)
-modified to generate fusing curve patterns and fixing a few issues with boundary handling.
+modified to generate fusing curve patterns and fix a few issues with boundary handling.
 
 ### macOS
 You can install all the mandatory dependencies on macOS with [MacPorts](https://www.macports.org).
@@ -63,14 +63,14 @@ ninja
 ```
 
 ## Running the Jupyter Notebooks
-The preferred way to interact with the rods code is in a Jupyter notebook,
+The preferred way to interact with the inflatables code is in a Jupyter notebook,
 using the Python bindings.
-We recommend you install the Python dependencies and JupyterLab itself in a
-virtual environment.
+We recommend that you install the Python dependencies and JupyterLab itself in a
+virtual environment (e.g., with [venv](https://docs.python.org/3/library/venv.html)).
 
 ```bash
 pip3 install wheel # Needed if installing in a virtual environment
-pip3 install jupyterlab ipykernel=5.5.5 # Use a slightly older version of ipykernel to avoid cluttering notebook with stdout content.
+pip3 install jupyterlab ipykernel==5.5.5 # Use a slightly older version of ipykernel to avoid cluttering notebook with stdout content.
 # If necessary, follow the instructions in the warnings to add the Python user
 # bin directory (containing the 'jupyter' binary) to your PATH...
 
@@ -93,5 +93,5 @@ jupyter lab
 Now try opening and running an demo notebook, e.g.,
 [`python/Demos/ConcentricCircles.ipynb`](https://github.com/jpanetta/Inflatables/blob/master/python/Demos/ConcentricCircles.ipynb).
 
-For an example of the full inverse design pipeline from input surface to fabrication file output, please see
+For an example of the full inverse design pipeline--from input surface to fabrication file output--please see
 [`python/Demos/Lilium.ipynb`](https://github.com/jpanetta/Inflatables/blob/master/python/Demos/Lilium.ipynb).

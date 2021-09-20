@@ -1,0 +1,9 @@
+build
+build_*
+*.cpython-*.so
+.ipynb_checkpoints
+__pycache__
+/python/MeshFEM
+.DS_Store
+.nfs*
+results*

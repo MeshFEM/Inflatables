@@ -36,6 +36,7 @@
 
 #include <cholmod.h>
 #include <vector>
+#include <ostream>
 #include <map>
 #include "Types.h"
 

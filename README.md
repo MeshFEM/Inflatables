@@ -30,6 +30,8 @@ sudo port install cmake boost suitesparse ninja
 # Dependencies for jupyterlab/notebooks
 sudo port install python39
 sudo port install npm7
+# Dependencies for `shapely` module
+sudo port install geos
 ```
 
 ### Ubuntu 20.04
@@ -42,6 +44,8 @@ sudo apt install libboost-filesystem-dev libboost-system-dev libboost-program-op
 # Dependencies (pybind11, jupyterlab/notebooks)
 sudo apt install python3-pip npm
 sudo npm install npm@latest -g
+# Dependencies for `shapely` module
+sudo apt install libgeos-dev
 ```
 
 ## Obtaining and Building
@@ -84,7 +88,7 @@ pip3 install matplotlib scipy
 pip3 install shapely # dependency of the fabrication file generation
 ```
 
-Launch Jupyter lab from the root python directory:
+Launch JupyterLab from the root python directory:
 ```bash
 cd python
 jupyter lab

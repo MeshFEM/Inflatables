@@ -29,9 +29,11 @@ You can install all the mandatory dependencies on macOS with [MacPorts](https://
 sudo port install cmake boost suitesparse ninja
 # Dependencies for jupyterlab/notebooks
 sudo port install python39
-sudo port install npm7
 # Dependencies for `shapely` module
 sudo port install geos
+# Install nodejs/npm using nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+nvm install 17 && nvm use 17
 ```
 
 ### Ubuntu 20.04
@@ -74,7 +76,12 @@ virtual environment (e.g., with [venv](https://docs.python.org/3/library/venv.ht
 
 ```bash
 pip3 install wheel # Needed if installing in a virtual environment
-pip3 install jupyterlab ipykernel==5.5.5 # Use a slightly older version of ipykernel to avoid cluttering notebook with stdout content.
+# Recent versions of jupyterlab and related packages cause problems:
+#   JupyerLab 3.4 and later has a bug where the tab and status bar GUI
+#                 remains visible after taking a viewer fullscreen
+#   ipykernel > 5.5.5 clutters the notebook with stdout content
+#   ipywidgets 8 and juptyerlab-widgets 3.0 break pythreejs
+pip3 install jupyterlab==3.3.4 ipykernel==5.5.5 ipywidgets==7.7.2 jupyterlab-widgets==1.1.1
 # If necessary, follow the instructions in the warnings to add the Python user
 # bin directory (containing the 'jupyter' binary) to your PATH...
 
@@ -86,6 +93,11 @@ jupyter labextension install .
 
 pip3 install matplotlib scipy
 pip3 install shapely # dependency of the fabrication file generation
+```
+
+You may need to add the following to your shell startup script for the installation of `pythreejs`'s dependencies during `pip3 install -e .` to succeed:
+```
+export NODE_OPTIONS=--openssl-legacy-provider;
 ```
 
 Launch JupyterLab from the root python directory:

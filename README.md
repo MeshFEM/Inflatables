@@ -22,11 +22,12 @@ Finally, it includes a version of Keenan Crane's [stripe patterns code](https://
 modified to generate fusing curve patterns and fix a few issues with boundary handling.
 
 ### macOS
-You can install all the mandatory dependencies on macOS with [MacPorts](https://www.macports.org).
+You can install all the mandatory dependencies on macOS with [MacPorts](https://www.macports.org). When installing SuiteSparse, be sure to get a version linked against `Accelerate.framework` rather than `OpenBLAS`; on MacPorts this is achieved by requesting the `accelerate` variant, which is no longer the default. Simulations will run over 2x slower under `OpenBLAS`.
 
 ```bash
 # Build/version control tools, C++ code dependencies
-sudo port install cmake boost suitesparse ninja
+sudo port install cmake boost ninja
+sudo port install SuiteSparse +accelerate
 # Dependencies for jupyterlab/notebooks
 sudo port install python39
 # Dependencies for `shapely` module

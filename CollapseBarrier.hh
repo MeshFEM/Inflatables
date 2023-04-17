@@ -64,7 +64,7 @@ struct CollapseBarrier {
     }
 
     Real energy() const {
-        return summation_parallel<Real>([this](size_t ei) {
+        return summation_parallel([this](size_t ei) {
                 return m_cpe[ei].energy() * mesh().element(ei)->volume(); }, mesh().numElements());
     }
 
